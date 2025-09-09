@@ -2,5 +2,32 @@ namespace wampproto;
 
 table Welcome {
   session_id:ulong;
+  authid:string;
   authrole:string;
+  authmethod:string;
+  authprovider:string;
+  roles:WelcomeRoles;
 }
+
+table WelcomeRoles {
+  dealer:Dealer;
+  broker:Broker;
+}
+
+table Dealer {
+  caller_identification:bool;
+  call_timeout:bool;
+  call_canceling:bool;
+  progressive_call_results:bool;
+  pattern_based_registration:bool;
+  shared_registration:bool;
+}
+
+table Broker {
+  publisher_identification:bool;
+  publisher_exclusion:bool;
+  acknowledge_event_received:bool;
+  pattern_based_subscription:bool;
+}
+
+root_type Welcome;

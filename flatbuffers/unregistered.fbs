@@ -1,5 +1,7 @@
 namespace wampproto;
 
-table UnRegistered {
-
+table Unregistered {
+  request_id:ulong;
 }
+
+root_type Unregistered;

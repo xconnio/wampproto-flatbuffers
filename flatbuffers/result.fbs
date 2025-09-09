@@ -1,5 +1,8 @@
 namespace wampproto;
 
 table Result {
-
+  request_id:ulong;
+  payload_serializer_id:ulong;
 }
+
+root_type Result;

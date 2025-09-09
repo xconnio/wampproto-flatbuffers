@@ -1,5 +1,7 @@
 namespace wampproto;
 
 table Cancel {
-
+  request_id:ulong;
 }
+
+root_type Cancel;

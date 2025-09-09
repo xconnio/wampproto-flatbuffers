@@ -1,5 +1,11 @@
+include "enums.fbs";
+
 namespace wampproto;
 
 table Subscribe {
-
+  request_id:ulong;
+  topic:string;
+  match:Match;
 }
+
+root_type Subscribe;

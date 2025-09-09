@@ -4,7 +4,7 @@ clean:
 gen: clean gen-py gen-go gen-dart gen-kotlin
 
 gen-py:
-	flatc -o python/wampprotofbs/gen --python flatbuffers/message.fbs --gen-all
+	flatc -o python/wampprotofbs/gen --python flatbuffers/*.fbs --gen-all
 	mv python/wampprotofbs/gen/wampproto/* python/wampprotofbs/gen/
 	rm -rf python/wampprotofbs/gen/wampproto
 

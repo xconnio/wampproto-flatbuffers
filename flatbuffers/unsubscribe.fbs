@@ -1,5 +1,8 @@
 namespace wampproto;
 
-table UnSubscribe {
-
+table Unsubscribe {
+  request_id:ulong;
+  subscription_id:ulong;
 }
+
+root_type Unsubscribe;

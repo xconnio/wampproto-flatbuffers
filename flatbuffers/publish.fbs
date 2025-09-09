@@ -1,5 +1,12 @@
 namespace wampproto;
 
 table Publish {
+  request_id:ulong;
+  topic:string;
+  payload_serializer_id:ulong;
 
+  exclude_me:bool;
+  acknowledge:bool;
 }
+
+root_type Publish;

@@ -1,0 +1,7 @@
+namespace wampproto;
+
+table Goodbye {
+  reason:string;
+}
+
+root_type Goodbye;

@@ -2,5 +2,7 @@ namespace wampproto;
 
 table Abort {
   reason:string;
-  session_id:long;
+  payload_serializer_id:ulong;
 }
+
+root_type Abort;

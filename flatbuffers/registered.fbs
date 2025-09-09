@@ -1,5 +1,8 @@
 namespace wampproto;
 
 table Registered {
-
+  request_id:ulong;
+  registration_id:ulong;
 }
+
+root_type Registered;

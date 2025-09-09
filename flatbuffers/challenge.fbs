@@ -3,4 +3,9 @@ namespace wampproto;
 table Challenge {
   authmethod:string;
   challenge:string;
+  salt:string;
+  iterations:uint;
+  keylen:uint;
 }
+
+root_type Challenge;
