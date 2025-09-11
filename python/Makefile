@@ -5,6 +5,7 @@ install_uv:
 
 setup:
 	make install_uv
+	make gen
 	uv venv
 	uv pip install .[test,publish]
 
@@ -30,3 +31,10 @@ publish-build:
 	@echo ========================================================
 	@echo
 	@echo now run .venv/bin/twine upload dist/newly_created.tar.gz
+
+gen:
+	$(MAKE) -C .. gen-py
+
+install-flatc:
+	sudo apt install cmake -y
+	sudo apt install flatbuffers-compiler -y

@@ -16,6 +16,3 @@ gen-dart:
 
 gen-kotlin:
 	flatc -o kotlin --kotlin flatbuffers/message.fbs --gen-all
-
-verify:
-	./.venv/bin/python create.py

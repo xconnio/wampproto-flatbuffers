@@ -1,35 +1,20 @@
-from flatbuffers import Builder
-
 from wampproto import messages, serializers
 
-from wampprotofbs.parsers import (
-    hello,
-    welcome,
-)
-from wampprotofbs.gen import (
-    Message,
-    Messages,
-)
+from wampprotofbs.parsers.abort import abort_to_flatbuffer, flatbuffer_to_abort
 
 
 class FlatBuffersSerializer(serializers.Serializer):
     def serialize(self, message: messages.Message) -> bytes:
-        if isinstance(message, messages.Hello):
-            builder = Builder(1024)
-            return hello.to_fbs(message, builder)
-        elif isinstance(message, messages.Welcome):
-            builder = Builder(1024)
-            return welcome.to_fbs(message, builder)
+        if isinstance(message, messages.Abort):
+            return abort_to_flatbuffer(message)
         else:
-            raise TypeError("unknown message type")
+            raise TypeError(f"unknown message type {type(message)}")
 
     def deserialize(self, data: bytes) -> messages.Message:
-        message = Message.Message.GetRootAs(data)
-        table = message.Message()
-        match message.MessageType():
-            case Messages.Messages.Hello:
-                return hello.from_fbs(table)
-            case Messages.Messages.Welcome:
-                return welcome.from_fbs(table)
+        message_type = data[0]
+
+        match message_type:
+            case messages.Abort.TYPE:
+                return flatbuffer_to_abort(data)
             case _:
-                raise ValueError("not supported.")
+                raise ValueError(f"Unsupported message type {message_type}")
