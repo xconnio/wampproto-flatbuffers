@@ -4,5 +4,42 @@ table Hello {
   realm:string;
   authid:string;
   authmethods:[string];
-  authprovider:string;
+  roles:HelloRoles;
+  public_key:string;
 }
+
+table HelloRoles {
+  caller:Caller;
+  callee:Callee;
+  publisher:Publisher;
+  subscriber:Subscriber;
+}
+
+table Caller {
+  caller_identification:bool;
+  call_timeout:bool;
+  call_canceling:bool;
+  progressive_call_results:bool;
+}
+
+table Callee {
+  caller_identification:bool;
+  call_timeout:bool;
+  call_canceling:bool;
+  progressive_call_results:bool;
+  pattern_based_registration:bool;
+  shared_registration:bool;
+}
+
+table Publisher {
+  publisher_identification:bool;
+  publisher_exclusion:bool;
+  acknowledge_event_received:bool;
+}
+
+table Subscriber {
+  publisher_identification:bool;
+  pattern_based_subscription:bool;
+}
+
+root_type Hello;

@@ -1,5 +1,8 @@
 namespace wampproto;
 
-table UnRegister {
-
+table Unregister {
+  request_id:ulong;
+  registration_id:ulong;
 }
+
+root_type Unregister;

@@ -1,5 +1,8 @@
 namespace wampproto;
 
 table Subscribed {
-
+  request_id:ulong;
+  subscription_id:ulong;
 }
+
+root_type Subscribed;

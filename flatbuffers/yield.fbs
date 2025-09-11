@@ -1,5 +1,8 @@
 namespace wampproto;
 
 table Yield {
-
+  request_id:ulong;
+  payload_serializer_id:ulong;
 }
+
+root_type Yield;

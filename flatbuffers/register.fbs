@@ -1,5 +1,20 @@
+include "enums.fbs";
+
 namespace wampproto;
 
-table Register {
-
+enum Invoke:ubyte {
+  SINGLE = 0,
+  ROUNDROBIN = 1,
+  RANDOM = 2,
+  FIRST = 3,
+  LAST = 4
 }
+
+table Register {
+  request_id:ulong;
+  procedure:string;
+  invoke:Invoke;
+  match:Match;
+}
+
+root_type Register;

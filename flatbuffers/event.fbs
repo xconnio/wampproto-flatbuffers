@@ -1,0 +1,14 @@
+namespace wampproto;
+
+table Event {
+  subscription_id:ulong;
+  publication_id:ulong;
+  payload_serializer_id:ulong;
+
+  publisher:ulong;
+  publisher_authid:string;
+  publisher_authrole:string;
+  topic:string;
+}
+
+root_type Event;

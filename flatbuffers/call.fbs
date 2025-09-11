@@ -1,5 +1,9 @@
 namespace wampproto;
 
 table Call {
-
+  request_id:ulong;
+  procedure:string;
+  payload_serializer_id:ulong;
 }
+
+root_type Call;

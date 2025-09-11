@@ -1,5 +1,14 @@
 namespace wampproto;
 
 table Invocation {
+  request_id:ulong;
+  registration_id:ulong;
+  payload_serializer_id:ulong;
 
+  caller:ulong;
+  caller_authid:string;
+  caller_authrole:string;
+  procedure:string;
 }
+
+root_type Invocation;

@@ -1,5 +1,10 @@
 namespace wampproto;
 
 table Error {
-
+  message_type:ulong;
+  request_id:ulong;
+  uri:string;
+  payload_serializer_id:ulong;
 }
+
+root_type Error;

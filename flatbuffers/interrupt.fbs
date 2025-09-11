@@ -1,5 +1,5 @@
 namespace wampproto;
 
 table Interrupt {
-
+  request_id:ulong;
 }
