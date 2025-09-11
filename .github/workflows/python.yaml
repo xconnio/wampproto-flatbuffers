@@ -30,6 +30,9 @@ jobs:
         with:
           python-version: '3.13'
 
+      - name: Install flatc
+        run: make install-flatc
+
       - name: Setup environment & install dependencies
         run: make setup
 
