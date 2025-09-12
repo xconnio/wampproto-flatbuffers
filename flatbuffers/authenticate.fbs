@@ -1,4 +1,4 @@
-namespace wampproto;
+namespace gen;
 
 table Authenticate {
   signature:string;

@@ -1,6 +1,6 @@
 include "enums.fbs";
 
-namespace wampproto;
+namespace gen;
 
 table Subscribe {
   request_id:ulong;

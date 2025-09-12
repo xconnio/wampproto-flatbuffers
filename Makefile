@@ -9,7 +9,7 @@ gen-py:
 	rm -rf python/wampprotofbs/gen/wampproto
 
 gen-go:
-	flatc -o go --go flatbuffers/message.fbs --gen-all
+	flatc -o go/ --go flatbuffers/*.fbs --gen-all
 
 gen-dart:
 	flatc -o dart --dart flatbuffers/message.fbs --gen-all

@@ -1,6 +1,6 @@
 include "enums.fbs";
 
-namespace wampproto;
+namespace gen;
 
 enum Invoke:ubyte {
   SINGLE = 0,
