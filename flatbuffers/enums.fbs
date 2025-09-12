@@ -1,4 +1,4 @@
-namespace wampproto;
+namespace gen;
 
 enum Match:ubyte {
   EXACT = 0,

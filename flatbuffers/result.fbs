@@ -1,4 +1,4 @@
-namespace wampproto;
+namespace gen;
 
 table Result {
   request_id:ulong;

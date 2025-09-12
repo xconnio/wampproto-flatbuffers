@@ -1,4 +1,4 @@
-namespace wampproto;
+namespace gen;
 
 table Registered {
   request_id:ulong;
